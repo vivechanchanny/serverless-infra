@@ -59,7 +59,7 @@ sleep 5 && aws cloudformation delete-stack --stack-name loadbalancer-stack
 ```  
 - Install haproxy
 ```
-sudo wget https://raw.githubusercontent.com/praveensiddu/aws/main/bastion/install_haproxy.sh -O install_haproxy.sh
+sudo wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/install_haproxy.sh -O install_haproxy.sh
 bash install_haproxy.sh
 ````  
 - You need a backend to test your haproxy. Install LAMP following the instructions in https://github.com/praveensiddu/aws/tree/main/lamp
