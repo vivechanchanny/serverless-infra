@@ -28,6 +28,7 @@ SSH access to all other hosts should go through Bastion. The private key to logi
 aws ec2 create-key-pair --key-name bastion-to-other-hosts-key --query 'KeyMaterial' --output text > bastion-to-other-hosts-key.pem
 ```
 - copy the private key you donwloaded on your laptop to bastion host.
+- sets permissions so that User / owner can read
 ```
 cp bastion-to-other-hosts-key.pem /home/ec2-user/.ssh/id_rsa
 chmod 0400 /home/ec2-user/.ssh/id_rsa
