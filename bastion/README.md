@@ -39,6 +39,6 @@ In future when new instances are created allow network access to it from this se
 - Login to bastion as ec2-user
 - Create a security group by name bastion-outgoing-secgrp and attach it to bastion instance
 ```
-wget https://raw.githubusercontent.com/vivechanchanny/aws-archery/main/bastion/CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh -O create_and_assign_secgrp.sh
+wget https://raw.githubusercontent.com/vivechanchanny/aws-archery/main/bastion/CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh -O CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh
 bash CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh bastion-outgoing-secgrp
 ```
