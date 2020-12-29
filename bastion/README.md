@@ -75,7 +75,7 @@ Below instructions were derived from [this documentation](https://www.digitaloce
 It is recommended to an [elastic IP](https://console.aws.amazon.com/vpc/home?region=us-east-1#Addresses:) in AWS and assign it to haproxy host.
 - Follow the below steps to generate new certs in /etc/haproxy/certs
 ```
-  - wget https://raw.githubusercontent.com/praveensiddu/aws/main/bastion/get-cert-letsencrypt.sh
+  - wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/get-cert-letsencrypt.sh
   - bash get-cert-letsencrypt.sh **yourdomain**
 ```  
 - At the prompts enter the following
