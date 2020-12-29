@@ -26,5 +26,5 @@ sudo ln -s /etc/haproxy/certs/$1.pem /etc/haproxy/certs/yourdomain.pem
 
 cd /etc/haproxy
 sudo rm -f haproxy-tls.cfg
-sudo wget https://raw.githubusercontent.com/praveensiddu/aws/main/bastion/haproxy-tls.cfg -O haproxy-tls.cfg
+sudo wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/haproxy-tls.cfg -O haproxy-tls.cfg
 sudo cp -f haproxy-tls.cfg haproxy.cfg
