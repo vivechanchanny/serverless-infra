@@ -1,3 +1,8 @@
+### Configure public IP
+It is recommended to reserve an elastic IP in AWS and assign it to bastion host. This will help so that you don't need to change IP each time you restart Bastion. You can configure your domain and mobaxterm with this static IP you own.
+
+> https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
+
 # Create Bastion instance
 ## Create AWS Linux2 Instance using this as cloud init
 - Initializing cloud-init for the instance
