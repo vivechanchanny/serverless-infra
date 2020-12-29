@@ -47,3 +47,42 @@ In future when new instances are created allow network access to it from this se
 wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh -O CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh
 bash CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh bastion-outgoing-secgrp
 ```
+# HAProxy
+Ideally bastion host must be hardened and must not run any additional software. To save on cost(static IP and instance) I run load balancer on bastion. But below instructions can be run on any other instance that you plan to run the load balancer on.
+- create and assign a security group 
+```
+wget https://raw.githubusercontent.com/praveensiddu/aws/main/bastion/loadbalancer-cf.yml -O loadbalancer-cf.yml
+aws cloudformation create-stack --stack-name loadbalancer-stack --template-body file://loadbalancer-cf.yml  --parameters ParameterKey=MySecurityGroup,ParameterValue=outgoing-from-loadbalancer-secgrp
+wget https://raw.githubusercontent.com/praveensiddu/aws/main/bastion/assign_secgrp.sh -O assign_secgrp.sh
+bash assign_secgrp.sh outgoing-from-loadbalancer-secgrp
+sleep 5 && aws cloudformation delete-stack --stack-name loadbalancer-stack
+```  
+- Install haproxy
+```
+sudo wget https://raw.githubusercontent.com/praveensiddu/aws/main/bastion/install_haproxy.sh -O install_haproxy.sh
+bash install_haproxy.sh
+````  
+- You need a backend to test your haproxy. Install LAMP following the instructions in https://github.com/praveensiddu/aws/tree/main/lamp
+- update the /etc/haproxy/haproxy.cfg by changing all occurrences of apacheserver.local with with the private IP address of the lamp instance.
+- After updating the private IP restart the haproxy
+```
+systemctl restart haproxy
+systemctl enable haproxy
+```
+### Configure TLS
+Below instructions were derived from [this documentation](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-centos-7)
+- Update **yourdomain** to point the public IP of the host on which haproxy is running. If you don't have a domain [register a new one](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar.html)
+It is recommended to an [elastic IP](https://console.aws.amazon.com/vpc/home?region=us-east-1#Addresses:) in AWS and assign it to haproxy host.
+- Follow the below steps to generate new certs in /etc/haproxy/certs
+```
+  - wget https://raw.githubusercontent.com/praveensiddu/aws/main/bastion/get-cert-letsencrypt.sh
+  - bash get-cert-letsencrypt.sh **yourdomain**
+```  
+- At the prompts enter the following
+    - (Enter 'c' to cancel): ***youremailaddress***
+    - (A)gree/(C)ancel: ***Y***
+    - (Y)es/(N)o: Y
+```
+- sudo systemctl restart haproxy
+```
+- Make sure your backend apache server is running and open https://yourdomain and https://yourdomain/phpMyAdmin in your browzer to test it.
