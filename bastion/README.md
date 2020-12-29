@@ -15,6 +15,7 @@ We would be launching insstances using this bastion host. So enable programatic 
 ```
 aws configure
 ```
+- Set the Respective credentials
    - AWS Access Key ID [None]: 
    - AWS Secret Access Key [None]: 
    - Default region name [None]: us-east-1
