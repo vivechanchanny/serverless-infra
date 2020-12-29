@@ -7,7 +7,7 @@ It is recommended to reserve an elastic IP in AWS and assign it to bastion host.
 ## Create AWS Linux2 Instance using this as cloud init
 - Initializing cloud-init for the instance
 ```
-wget https://raw.githubusercontent.com/vivechanchanny/aws-archery/main/bastion/cloud-init.sh
+wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/cloud-init.sh
 bash cloud-init.sh
 ```
 > If you forgot to create the instance with user-data you can wget this file and execute it
@@ -44,6 +44,6 @@ In future when new instances are created allow network access to it from this se
 - Login to bastion as ec2-user
 - Create a security group by name bastion-outgoing-secgrp and attach it to bastion instance
 ```
-wget https://raw.githubusercontent.com/vivechanchanny/aws-archery/main/bastion/CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh -O CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh
+wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh -O CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh
 bash CREATE-ASSIGN-BASTIONOUTGOING-SECGRG.sh bastion-outgoing-secgrp
 ```
