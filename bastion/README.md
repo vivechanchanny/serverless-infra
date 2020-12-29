@@ -11,13 +11,13 @@ bash cloud-init.sh
 We would be launching insstances using this bastion host. So enable programatic access from Bastion host and remove it when you are done.
 - Create a non root user in IAM( since root account must not be used for programatic access). Assign AdministratorAccess privilege to the user( Ideally only limited privilege must be given)
 - Login as that IAM user. "Create access key" and download from here https://console.aws.amazon.com/iam/home?region=us-east-1#/security_credentials
-- Runaws configure on bastion host.
+- Run aws configure on bastion host.
 ```
 aws configure
 ```
-  - AWS Access Key ID [None]: 
-  - AWS Secret Access Key [None]: 
-  - Default region name [None]: us-east-1
+  > AWS Access Key ID [None]: 
+  > AWS Secret Access Key [None]: 
+  > Default region name [None]: us-east-1
 ### Configure SSH keys
 SSH access to all other hosts should go through Bastion. The private key to login to other hosts should be kept only on Bastion. While creating the instances use this key name.
 - Login to bastion as ec2-user
