@@ -3,7 +3,7 @@
 The examples in this folder contains instructions to quickly [install LAMP stack on AWS Linux 2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-lamp-amazon-linux-2.html) and configure TLS. 
 
 ## Prep steps
-- Make sure bastion host is configured properly https://github.com/praveensiddu/aws/blob/main/bastion/README.md#configure-bastion
+- Make sure bastion host is configured properly https://github.com/vivechanchanny/wordpress-serverlesss/tree/main/bastion#configure-bastion
   - for programmatic access
   - ssh key based login to other hosts.
   - security group to allow login to other hosts.
@@ -16,7 +16,7 @@ Either use the fully automated approach or manually execute the commands
   - export MYSQLROOTPASSWORD=CHANGEME_PASSWORD
   - export ANSIBLE_HOST_KEY_CHECKING=false
   - export LAMPINSTNAME=lampinst1
-- wget https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/ansible-setup.yml -O ansible-setup.yml
+- wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/ansible-setup.yml -O ansible-setup.yml
 - ansible-playbook -e  "mysql_root_password=$MYSQLROOTPASSWORD,LAMPINSTNAME=$LAMPINSTNAME"  ansible-setup.yml
 - export LAMP_INST_IP=$(bash get-private-ip.sh $LAMPINSTNAME)
 - curl http://$LAMP_INST_IP:80
@@ -33,12 +33,12 @@ Create  instance
 - Login to bastion host
 - Set environment varaible to the SSH key name used to SSH from bastion
   - export MYSSHKEYNAME=bastion-to-other-hosts-key
-- wget https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/create-instance.sh -O create-instance.sh
+- wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/create-instance.sh -O create-instance.sh
 - bash create-instance.sh
 ### Create AWS Linux2 Instance using GUI
 - Create Instance on UI with 
   - SSH key name used to SSH from bastion
-  - with this link as userdata https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/cloud-init.sh
+  - with this link as userdata https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/cloud-init.sh
 > If you forgot to create the instance with user-data you can wget this file and execute it
 
 ###  Allow access to bastion and loadbalancer
