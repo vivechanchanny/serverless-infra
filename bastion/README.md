@@ -15,9 +15,9 @@ We would be launching insstances using this bastion host. So enable programatic 
 ```
 aws configure
 ```
-  > AWS Access Key ID [None]: 
-  > AWS Secret Access Key [None]: 
-  > Default region name [None]: us-east-1
+   - AWS Access Key ID [None]: 
+   - AWS Secret Access Key [None]: 
+   - Default region name [None]: us-east-1
 ### Configure SSH keys
 SSH access to all other hosts should go through Bastion. The private key to login to other hosts should be kept only on Bastion. While creating the instances use this key name.
 - Login to bastion as ec2-user
