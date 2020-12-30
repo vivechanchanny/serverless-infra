@@ -3,7 +3,7 @@
   # Downlaod the script to create instance
   - name: download create-instance.sh
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/create-instance.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/create-instance.sh
        dest: .
        force: yes
 
@@ -16,7 +16,7 @@
         
   - name: download get-private-ip.sh
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/utils/get-private-ip.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/utils/get-private-ip.shh
        dest: .
        force: yes
 
@@ -39,7 +39,7 @@
     
   - name: download add-ingress-to-secgrp.sh
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/utils/add-ingress-to-secgrp.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/utils/add-ingress-to-secgrp.sh
        dest: .
        force: yes
 
@@ -61,7 +61,7 @@
   
   - name: download cloud-init
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/cloud-init.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/cloud-init.sh
        dest: .
        force: yes
 
@@ -71,7 +71,7 @@
     
   - name: download configure apache
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/configure-apache.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/configure-apache.sh
        dest: .
        force: yes
 
@@ -80,7 +80,7 @@
 
   - name: download configure-tls.sh
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/configure-tls.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/configure-tls.sh
        dest: .
        force: yes
 
@@ -89,7 +89,7 @@
 
   - name: download configure-tls.sh
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/secure-db.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/secure-db.sh
        dest: .
        force: yes
        
@@ -101,7 +101,7 @@
 
   - name: download phpAdmin-install-config.sh
     get_url:
-       url: https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/phpAdmin-install-config.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/phpAdmin-install-config.sh
        dest: .
        force: yes
 
