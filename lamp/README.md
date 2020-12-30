@@ -68,7 +68,7 @@ This step is needed only if cloud-init is not run by providing as userinput whil
 - curl --insecure https://localhost:443
 - For configuring a browzer trusted certificate use this procedure  https://github.com/vivechanchanny/wordpress-serverlesss/tree/main/bastion#configure-bastion for cert signed by  lets encrypt
 ###  Secure the database server
-- wget https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/secure-db.sh -O secure-db.sh
+- wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/secure-db.sh -O secure-db.sh
 - bash secure-db.sh
   - Enter current password for mysql root 
 
