@@ -1,11 +1,11 @@
-### configure MFA to  an  ec2-instance
+# configure MFA to  an  ec2-instance
 ## comfigure a bastion host
    -https://github.com/vivechanchanny/wordpress-serverlesss/tree/main/bastion#configure-bastion
 ## Install EPEL Repo on the EC2 instance
 ```
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
-###  Install Google Authenticator on the EC2 instance
+##  Install Google Authenticator on the EC2 instance
 ```
 sudo yum install google-authenticator.x86_64 -y
 ```
@@ -39,7 +39,7 @@ sudo yum install google-authenticator.x86_64 -y
    ```
    AuthenticationMethods publickey,keyboard-interactive
    ```
-### Configure Google Authenticator
+## Configure Google Authenticator
 - Install Google Authenticator on the mobile
 ```
    https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_IN
