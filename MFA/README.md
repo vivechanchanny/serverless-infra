@@ -48,12 +48,12 @@ sudo yum install google-authenticator.x86_64 -y
    https://apps.apple.com/in/app/google-authenticator/id388497605                              
 ```   
 -  Run Google Authenticator on EC2 and Get QR code
-  - run the following command as the user of your choice in my case it is ec2-user
+      - run the following command as the user of your choice in my case it is ec2-user
   ```
   google-authenticator
   ```
-- Scan the Shown QR code in your Google Authenticator App
-- Complete the Google Authenticator Setup in EC2
+      - Scan the Shown QR code in your Google Authenticator App
+## Complete the Google Authenticator Setup in EC2
 ```
 [ec2-user@ip-172-31-83-181 ~]# google-authenticator
 
@@ -93,11 +93,11 @@ login attempts, you can enable rate-limiting for the authentication module.
 By default, this limits attackers to no more than 3 login attempts every 30s.
 Do you want to enable rate-limiting? (y/n) y
 ```
--  Restart SSH services  on the EC2 server
+## Restart SSH services  on the EC2 server
 ```
 sudo service sshd restart
 ```
-- SSH to validate the AWS MFA setup.
+## SSH to validate the AWS MFA setup.
 ```
 ssh -i ~/Downloads/mykeypair.pem ec2-user@3.95.13.122
 ```
