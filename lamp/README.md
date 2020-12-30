@@ -52,21 +52,21 @@ Create  instance
 ###  Cloud init
 This step is needed only if cloud-init is not run by providing as userinput while creating instance.
 - Login to newly created host
-- wget https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/cloud-init.sh -O cloud-init.sh
+- wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/cloud-init.sh -O cloud-init.sh
 - bash cloud-init.sh
 ###  Configure Apache 
 - Login to newly created host
-- wget https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/configure-apache.sh -O configure-apache.sh
+- wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/configure-apache.sh -O configure-apache.sh
 - bash configure-apache.sh
 - curl http://localhost:80
 ###  Configure self signed TLS
 | Note: Steps in this section will configure with a self signed TLS certificate. You will have to explicitly trust the certificate in browzer.
 - curl https://localhost:443  should report "Connection refused" since TLS has not been configured.
-- wget https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/configure-tls.sh -O configure-tls.sh
+- wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/configure-tls.sh -O configure-tls.sh
 - bash configure-tls.sh
 - curl https://localhost:443  should report self signed certificate error
 - curl --insecure https://localhost:443
-- For configuring a browzer trusted certificate use this procedure  https://github.com/praveensiddu/aws/tree/main/bastion#configure-tls for cert signed by  lets encrypt
+- For configuring a browzer trusted certificate use this procedure  https://github.com/vivechanchanny/wordpress-serverlesss/tree/main/bastion#configure-bastion for cert signed by  lets encrypt
 ###  Secure the database server
 - wget https://raw.githubusercontent.com/praveensiddu/aws/main/lamp/secure-db.sh -O secure-db.sh
 - bash secure-db.sh
