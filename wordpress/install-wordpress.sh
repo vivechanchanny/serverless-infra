@@ -65,7 +65,7 @@ sed -i "/$pattern/c\\$saltline" wordpress/wp-config.php
 
 
 sudo systemctl start mariadb
-/bin/rm -f wordpress-db.sql && wget https://raw.githubusercontent.com/praveensiddu/aws/main/wordpress/wordpress-db.sql
+/bin/rm -f wordpress-db.sql && wget https://raw.githubusercontent.com/vivechanchanny/aws/main/wordpress/wordpress-db.sql
 sed -i "s/your_strong_password/$wordpress_db_pass/g" wordpress-db.sql
 
 # TBD remove the file since it contains password
