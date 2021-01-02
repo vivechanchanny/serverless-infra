@@ -62,7 +62,7 @@ sleep 5 && aws cloudformation delete-stack --stack-name loadbalancer-stack
 sudo wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/install_haproxy.sh -O install_haproxy.sh
 bash install_haproxy.sh
 ````  
-- You need a backend to test your haproxy. Install LAMP following the instructions in https://github.com/praveensiddu/aws/tree/main/lamp
+- You need a backend to test your haproxy. Install LAMP following the instructions in https://github.com/vivechanchanny/aws/tree/main/lamp
 - update the /etc/haproxy/haproxy.cfg by changing all occurrences of apacheserver.local with with the private IP address of the lamp instance.
 - After updating the private IP restart the haproxy
 ```
