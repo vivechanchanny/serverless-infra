@@ -16,7 +16,7 @@ Either use the fully automated approach or manually execute the commands
 ```
 export MYSQLROOTPASSWORD=CHANGEME_PASSWORD
 export ANSIBLE_HOST_KEY_CHECKING=false
-xport LAMPINSTNAME=lampinst1
+export LAMPINSTNAME=lampinst1
 wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/ansible-setup.yml -O ansible-setup.yml
 ansible-playbook -e  "mysql_root_password=$MYSQLROOTPASSWORD,LAMPINSTNAME=$LAMPINSTNAME"  ansible-setup.yml
 export LAMP_INST_IP=$(bash get-private-ip.sh $LAMPINSTNAME)
