@@ -1,13 +1,7 @@
 ---
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
-  AWS CloudFormation Sample Template LAMP_Single_Instance: Create a LAMP stack
-  using a single EC2 instance and a local MySQL database for storage. This
-  template demonstrates using the AWS CloudFormation bootstrap scripts to
-  install the packages and files necessary to deploy the Apache web server, PHP
-  and MySQL at instance launch time. **WARNING** This template creates an Amazon
-  EC2 instance. You will be billed for the AWS resources used if you create a
-  stack from this template.
+ bastion via cloudformation
 Parameters:
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
@@ -42,27 +36,6 @@ Resources:
       ImageId: !Ref AmiID 
       SecurityGroups:
         - !Ref WebServerSecurityGroup
-      KeyName: !Ref KeyName
-      UserData:
-        Fn::Base64:
-          Fn::Join:
-            - ''
-            - - "#!/bin/bash -xe\n"
-              - "echo hello >> secrets.txt\n"
-              - "# Store the user input values\n"
-              - "echo \"DBUser="
-              - Ref: DBUser
-              - "\" >> secrets.txt\n"
-              - "echo \"DBName="
-              - Ref: DBName
-              - "\" >> secrets.txt\n"
-              - "echo \"DBPassword="
-              - Ref: DBPassword
-              - "\" >> secrets.txt\n"
-              - "\necho \"DBRootPassword="
-              - Ref: DBRootPassword
-              - "\" >> secrets.txt\n"
-              - "\n"
   WebServerSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
