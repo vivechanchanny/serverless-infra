@@ -38,12 +38,12 @@ Resources:
       KeyName: !Ref KeyName
       ImageId: !Ref AmiID 
       SecurityGroups:
-        - !Ref BastionSecurityGroup
+        - !Ref SshToBastionSecgrp
       Tags:
       -
         Key: Name
-        Value: bastionhost-cf  
-  BastionSecurityGroup:
+        Value: 'bastionhost-cf'  
+  SshToBastionSecgrp:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
       GroupDescription: Enable ssh access via port 22
@@ -62,3 +62,5 @@ Outputs:
         - !GetAtt 
           - BastionHost
           - PublicDnsName
+          - PublicIp
+          
