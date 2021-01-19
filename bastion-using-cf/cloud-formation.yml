@@ -62,5 +62,4 @@ Outputs:
         - !GetAtt 
           - BastionHost
           - PublicDnsName
-          - PublicIp
           
