@@ -12,3 +12,4 @@ mysecurityId=$(aws ec2 describe-security-groups --group-names $destinationgroup 
 echo $mysecurityId
 
 aws ec2 authorize-security-group-ingress --group-id $mysecurityId --protocol tcp --port $port --source-group $sourcegrp
+

@@ -16,7 +16,7 @@
         
   - name: download get-private-ip.sh
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/utils/get-private-ip.shh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/utils/get-private-ip.sh
        dest: .
        force: yes
 
@@ -107,3 +107,5 @@
 
   - name: run phpAdmin-install-config.sh
     shell: bash phpAdmin-install-config.sh
+    
+

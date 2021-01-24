@@ -1,3 +1,4 @@
+
 #Below instructions are derived from https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hosting-wordpress.html
 
 if [[ "$MYSQL_ROOTPASSWORD" == "" ]]
@@ -65,7 +66,7 @@ sed -i "/$pattern/c\\$saltline" wordpress/wp-config.php
 
 
 sudo systemctl start mariadb
-/bin/rm -f wordpress-db.sql && wget https://raw.githubusercontent.com/vivechanchanny/aws/main/wordpress/wordpress-db.sql
+/bin/rm -f wordpress-db.sql && wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/wordpress/wordpress-db.sql
 sed -i "s/your_strong_password/$wordpress_db_pass/g" wordpress-db.sql
 
 # TBD remove the file since it contains password
@@ -88,3 +89,8 @@ sudo systemctl restart httpd
 sudo systemctl enable httpd && sudo systemctl enable mariadb
 sudo systemctl status mariadb
 sudo systemctl status httpd
+
+
+
+
+ 

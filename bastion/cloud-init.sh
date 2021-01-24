@@ -15,7 +15,7 @@ sudo systemctl start docker
 sudo amazon-linux-extras install -y ansible2
 
 # install haproxy only if you plan to run load balancer on bastion(A dedicated load balancer is recommended)
-sudo wget https://raw.githubusercontent.com/vivechanchanny/aws/main/bastion/install_haproxy.sh -O install_haproxy.sh
+sudo wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/bastion/install_haproxy.sh -O install_haproxy.sh
 bash install_haproxy.sh
 
 echo "set -o vi" >> ~/.bashrc

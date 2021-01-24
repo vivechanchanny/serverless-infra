@@ -16,3 +16,4 @@ sudo ./make-dummy-cert localhost.crt
 sudo sed -i 's/SSLCertificateKeyFile/#SSLCertificateKeyFile/' /etc/httpd/conf.d/ssl.conf
 
 sudo systemctl restart httpd
+

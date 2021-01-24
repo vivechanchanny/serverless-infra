@@ -13,4 +13,3 @@ sudo systemctl enable docker
 sudo systemctl start docker
 sudo docker run hello-world
 
-© 2020 GitHub, Inc.
