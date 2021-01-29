@@ -1,0 +1,8 @@
+    dashboard:
+      enabled: true
+      domain: CHANGEME_MYDOMAIN
+    ssl:
+      enabled: true
+      enforced: true
+      defaultCert: CHANGEME_MYDOMAIN_PUBLIC_CERT
+      defaultKey: CHANGEME_MYDOMAIN_PRIV_KEY
