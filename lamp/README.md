@@ -17,12 +17,13 @@ Either use the fully automated approach or manually execute the commands
   - export ANSIBLE_HOST_KEY_CHECKING=false
   - export LAMPINSTNAME=lampinst1
 - wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/ansible-setup.yml -O ansible-setup.yml
-- ansible-playbook -e  "mysql_root_password=$MYSQLROOTPASSWORD,LAMPINSTNAME=$LAMPINSTNAME"  ansible-setup.yml
+- ansible-playbook -e  "mysql_root_password=$MYSQLROOTPASSWORD LAMPINSTNAME=$LAMPINSTNAME"  ansible-setup.yml
 - export LAMP_INST_IP=$(bash get-private-ip.sh $LAMPINSTNAME)
 - curl http://$LAMP_INST_IP:80
 - update the /etc/haproxy/haproxy.cfg on load balancer host to point to this IP "echo $LAMP_INST_IP"
 - sudo systemctl restart haproxy
-- access phpAdmin page http://yourdomain/phpMyAdmin/ and make sure you can login as root.
+- to test haproxy is configured properly run curl http://localhost:80
+- (optional step) Temporarily allow access from internet to the this instance and access phpAdmin page http://publicip/phpMyAdmin/ and make sure you can login as root.
 
 ## Manual Approach
 Use these steps if you prefer not to use the fully automated approach.
