@@ -11,7 +11,7 @@
   - name: run create-instance.sh
     shell: bash create-instance.sh
     environment:
-        MYSSHKEYNAME: 'bastion-to-other-hosts-key'
+        MYSSHKEYNAME: 'bastion-to-otherhosts-key'
         LAMPINSTNAME: "{{LAMPINSTNAME}}"
         
   - name: download get-private-ip.sh
